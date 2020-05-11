@@ -251,7 +251,7 @@ func (c *registry) resolveDefinitions() error {
 
 	for len(c.unresolvedDefs) > 0 && c.iterations < c.maxIterations {
 		c.iterations = c.iterations + 1
-		allowThunks := c.iterations == c.maxIterations
+		allowThunks := false // c.iterations == c.maxIterations
 
 		for _, definition := range c.unresolvedDefs {
 			switch nodeKind := definition.GetKind(); nodeKind {
